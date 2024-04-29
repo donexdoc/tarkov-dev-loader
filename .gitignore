@@ -5,7 +5,8 @@ node_modules
 # build
 
 build
+.env
 
-# downloaded files
+# data files
 
-downloaded
+data

@@ -2,5 +2,5 @@
   "watch": ["src/"],
   "ext": ".ts,.js",
   "ignore": ["node_modules/"],
-  "exec": "npx tsx ./src/main.ts"
+  "exec": "npx tsx -r dotenv/config ./src/main.ts"
 }
