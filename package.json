@@ -1,0 +1,30 @@
+{
+  "name": "tarkov-dev-loader",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon",
+    "build": "rimraf ./build && npx tsc",
+    "start": "node ./build/main.js",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix"
+  },
+  "author": "Aleksandr Donkov <donexcode@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donexdoc/tarkov-dev-loader.git"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "globals": "^15.1.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0"
+  }
+}
