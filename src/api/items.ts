@@ -1,8 +1,8 @@
 import { ApolloQueryResult, gql } from '@apollo/client/core'
 import { apiClient } from './client.js'
-import { IItem } from 'src/types/item.js'
+import { Item } from 'src/types/item.js'
 
-export default function fetchItems(): Promise<ApolloQueryResult<{ items: IItem[] }>> {
+export default function fetchItems(): Promise<ApolloQueryResult<{ items: Item[] }>> {
   return apiClient.query({
     query: gql`
       {
@@ -12,6 +12,9 @@ export default function fetchItems(): Promise<ApolloQueryResult<{ items: IItem[]
           shortName
           image512pxLink
           types
+          usedInTasks {
+            id
+          }
         }
       }
     `,
