@@ -1,18 +1,23 @@
-import { ApolloQueryResult, gql } from '@apollo/client/core'
-import { apiClient } from './client.js'
 import { Trader } from 'src/types/trader.js'
+import fetchElements from './fetch.js'
+import { LANGUAGES } from 'src/constants.js'
 
-export default function fetchTraders(): Promise<ApolloQueryResult<{ traders: Trader[] }>> {
-  return apiClient.query({
-    query: gql`
-      {
-        traders(lang: ru) {
-          id
-          name
-          normalizedName
-          imageLink
-        }
-      }
-    `,
+const QUERY = `
+{
+  traders(lang: %s) {
+    id
+    name
+    normalizedName
+    imageLink
+  }
+}
+`
+
+interface ITraders {
+  traders: Trader[]
+}
+export default async function fetchTraders(lang: LANGUAGES = LANGUAGES.EN): Promise<ITraders> {
+  return fetchElements<ITraders>(QUERY, lang).then((data) => {
+    return data.data
   })
 }

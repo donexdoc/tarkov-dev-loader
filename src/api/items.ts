@@ -1,22 +1,28 @@
-import { ApolloQueryResult, gql } from '@apollo/client/core'
-import { apiClient } from './client.js'
 import { Item } from 'src/types/item.js'
+import { LANGUAGES } from 'src/constants.js'
+import fetchElements from './fetch.js'
 
-export default function fetchItems(): Promise<ApolloQueryResult<{ items: Item[] }>> {
-  return apiClient.query({
-    query: gql`
-      {
-        items(lang: ru) {
-          id
-          name
-          shortName
-          image512pxLink
-          types
-          usedInTasks {
-            id
-          }
-        }
-      }
-    `,
+const QUERY = `
+{
+  items(lang: %s) {
+    id
+    name
+    shortName
+    image512pxLink
+    types
+    usedInTasks {
+      id
+    }
+  }
+}
+`
+
+interface IItems {
+  items: Item[]
+}
+
+export default async function fetchItems(lang: LANGUAGES = LANGUAGES.EN): Promise<IItems> {
+  return fetchElements<IItems>(QUERY, lang).then((data) => {
+    return data.data
   })
 }
