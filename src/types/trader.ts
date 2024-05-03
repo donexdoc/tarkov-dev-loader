@@ -1,4 +1,4 @@
-export type Trader = {
+export interface Trader {
   id: string
   name: string
   normalizedName: string

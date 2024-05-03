@@ -1,6 +1,6 @@
 import { Task } from './task.js'
 
-export type Item = {
+export interface Item {
   id: string
   name: string
   shortName: string

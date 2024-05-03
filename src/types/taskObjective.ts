@@ -1,4 +1,4 @@
-export type TaskObjective = {
+export interface TaskObjective {
   id: string
   type: string
   description: string
