@@ -4,13 +4,15 @@ import saveToFile from 'src/tools/save.js'
 
 const LITERAL = 'traders'
 
-export default function saveTraders(lang: LANGUAGES) {
+export default async function saveTraders(lang: LANGUAGES) {
   console.log('Starting load - ', LITERAL)
-  fetchTraders(lang)
+  return fetchTraders(lang)
     .then(({ traders }) => {
       const jsonTraders = JSON.stringify(traders)
 
       saveToFile({ data: jsonTraders, lang: lang, name: LITERAL })
+
+      return traders
     })
     .catch((error: Error) => {
       console.error('Error fetching data:', error)

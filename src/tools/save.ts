@@ -3,13 +3,17 @@ import { LANGUAGES } from 'src/constants.js'
 
 interface SaveProperties {
   data: string
-  lang: LANGUAGES
+  lang?: LANGUAGES
   name: string
 }
 const SAVE_DIR = process.env.SAVE_DIR
 
-export default async function saveToFile({ data, lang, name }: SaveProperties) {
-  const filePath = `${SAVE_DIR}/${lang}/`
+export default function saveToFile({ data, lang, name }: SaveProperties) {
+  let filePath = `${SAVE_DIR}/`
+
+  if (lang) {
+    filePath += `${lang}/`
+  }
 
   mkdir(filePath, { recursive: true })
     .then(() => {
