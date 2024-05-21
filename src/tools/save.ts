@@ -1,5 +1,5 @@
 import { writeFile, mkdir } from 'fs/promises'
-import { LANGUAGES } from 'src/constants.js'
+import { LANGUAGES } from '@/constants.js'
 
 interface SaveProperties {
   data: string

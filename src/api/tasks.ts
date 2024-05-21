@@ -1,6 +1,6 @@
-import { LANGUAGES } from 'src/constants.js'
+import { LANGUAGES } from '@/constants.js'
 import fetchElements from './fetch.js'
-import { Task } from 'src/types/task.js'
+import { Task } from '@/types/task.js'
 
 const QUERY = `
 {

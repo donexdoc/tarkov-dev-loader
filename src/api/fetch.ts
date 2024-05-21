@@ -1,4 +1,4 @@
-import { LANGUAGES } from 'src/constants.js'
+import { LANGUAGES } from '@/constants.js'
 import { apiClient } from './client.js'
 import { format } from 'util'
 import { ApolloQueryResult, gql } from '@apollo/client/core/index.js'

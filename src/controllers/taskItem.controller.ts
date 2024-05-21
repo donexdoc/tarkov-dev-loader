@@ -1,8 +1,8 @@
-import saveToFile from 'src/tools/save.js'
-import { Item } from 'src/types/item.js'
-import { Task } from 'src/types/task.js'
-import { TaskItem } from 'src/types/taskItem.js'
-import { instanceOfTaskObjectiveItem } from 'src/types/taskObjectiveItem.js'
+import saveToFile from '@/tools/save.js'
+import { Item } from '@/types/item.js'
+import { Task } from '@/types/task.js'
+import { TaskItem } from '@/types/taskItem.js'
+import { instanceOfTaskObjectiveItem } from '@/types/taskObjectiveItem.js'
 
 const LITERAL = 'taskItems'
 const SAVING_TYPE = 'findItem'

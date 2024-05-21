@@ -1,6 +1,6 @@
-import { Trader } from 'src/types/trader.js'
+import { Trader } from '@/types/trader.js'
 import fetchElements from './fetch.js'
-import { LANGUAGES } from 'src/constants.js'
+import { LANGUAGES } from '@/constants.js'
 
 const QUERY = `
 {

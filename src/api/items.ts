@@ -1,5 +1,5 @@
-import { Item } from 'src/types/item.js'
-import { LANGUAGES } from 'src/constants.js'
+import { Item } from '@/types/item.js'
+import { LANGUAGES } from '@/constants.js'
 import fetchElements from './fetch.js'
 
 const QUERY = `

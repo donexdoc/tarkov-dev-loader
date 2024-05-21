@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx nodemon",
-    "build": "rimraf ./build && npx tsc",
+    "build": "rimraf ./build && npx tsc && npx tsc-alias",
     "start": "node --env-file=.env ./build/main.js",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix"
@@ -24,6 +24,7 @@
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.8.0"
   },

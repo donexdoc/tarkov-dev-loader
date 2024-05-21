@@ -1,6 +1,6 @@
-import fetchTasks from 'src/api/tasks.js'
-import { LANGUAGES } from 'src/constants.js'
-import saveToFile from 'src/tools/save.js'
+import fetchTasks from '@/api/tasks.js'
+import { LANGUAGES } from '@/constants.js'
+import saveToFile from '@/tools/save.js'
 
 const LITERAL = 'tasks'
 

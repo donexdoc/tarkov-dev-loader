@@ -1,6 +1,6 @@
-import fetchItems from 'src/api/items.js'
-import { LANGUAGES } from 'src/constants.js'
-import saveToFile from 'src/tools/save.js'
+import fetchItems from '@/api/items.js'
+import { LANGUAGES } from '@/constants.js'
+import saveToFile from '@/tools/save.js'
 
 const LITERAL = 'items'
 

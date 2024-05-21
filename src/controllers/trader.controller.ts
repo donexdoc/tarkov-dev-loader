@@ -1,6 +1,6 @@
-import fetchTraders from 'src/api/traders.js'
-import { LANGUAGES } from 'src/constants.js'
-import saveToFile from 'src/tools/save.js'
+import fetchTraders from '@/api/traders.js'
+import { LANGUAGES } from '@/constants.js'
+import saveToFile from '@/tools/save.js'
 
 const LITERAL = 'traders'
 
