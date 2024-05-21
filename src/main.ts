@@ -1,25 +1,22 @@
 // import { writeFile } from 'fs/promises'
-import fetchTasks from './api/tasks.js'
 import { LANGUAGES } from './constants.js'
-import { instanceOfTaskObjectiveItem } from './types/taskObjectiveItem.js'
-import saveToFile from './tools/save.js'
 
-console.log('GQL server: ', process.env.TARKOV_DEV_GQL_SERVER)
+import saveTasks from './controllers/task.controller.js'
+import saveItems from './controllers/item.controller.js'
+import saveTraders from './controllers/trader.controller.js'
 
-fetchTasks(LANGUAGES.EN)
-  .then(({ tasks }) => {
-    for (const task of tasks) {
-      if (task.objectives.length)
-        for (const objective of task.objectives) {
-          if (instanceOfTaskObjectiveItem(objective)) {
-            console.log(objective.items)
-          }
-        }
-    }
-    const jsonTasks = JSON.stringify(tasks)
+async function loadData() {
+  console.log('GQL server: ', process.env.TARKOV_DEV_GQL_SERVER)
 
-    saveToFile({ data: jsonTasks, lang: LANGUAGES.EN, name: 'tasks' })
+  Object.values(LANGUAGES).forEach((language) => {
+    console.log('Loading for language: ', language)
+
+    saveTasks(language)
+    saveItems(language)
+    saveTraders(language)
   })
-  .catch((error: Error) => {
-    console.error('Error fetching data:', error)
-  })
+}
+
+loadData().then(() => {
+  console.log('all files saved')
+})

@@ -17,12 +17,12 @@ const QUERY = `
 }
 `
 
-interface IItems {
+export interface Items {
   items: Item[]
 }
 
-export default async function fetchItems(lang: LANGUAGES = LANGUAGES.EN): Promise<IItems> {
-  return fetchElements<IItems>(QUERY, lang).then((data) => {
+export default async function fetchItems(lang: LANGUAGES = LANGUAGES.EN): Promise<Items> {
+  return fetchElements<Items>(QUERY, lang).then((data) => {
     return data.data
   })
 }

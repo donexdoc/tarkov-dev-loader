@@ -31,12 +31,12 @@ const QUERY = `
 }
 `
 
-interface ITasks {
+export interface Tasks {
   tasks: Task[]
 }
 
-export default async function fetchTasks(lang: LANGUAGES = LANGUAGES.EN): Promise<ITasks> {
-  return fetchElements<ITasks>(QUERY, lang).then((data) => {
+export default async function fetchTasks(lang: LANGUAGES = LANGUAGES.EN): Promise<Tasks> {
+  return fetchElements<Tasks>(QUERY, lang).then((data) => {
     return data.data
   })
 }

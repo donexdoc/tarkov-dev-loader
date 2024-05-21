@@ -13,11 +13,11 @@ const QUERY = `
 }
 `
 
-interface ITraders {
+export interface Traders {
   traders: Trader[]
 }
-export default async function fetchTraders(lang: LANGUAGES = LANGUAGES.EN): Promise<ITraders> {
-  return fetchElements<ITraders>(QUERY, lang).then((data) => {
+export default async function fetchTraders(lang: LANGUAGES = LANGUAGES.EN): Promise<Traders> {
+  return fetchElements<Traders>(QUERY, lang).then((data) => {
     return data.data
   })
 }
